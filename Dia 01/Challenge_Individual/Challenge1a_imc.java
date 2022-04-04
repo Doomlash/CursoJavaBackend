@@ -1,3 +1,4 @@
+package Challenge_Individual;
 import java.util.Scanner;
 
 public class Challenge1a_imc {
