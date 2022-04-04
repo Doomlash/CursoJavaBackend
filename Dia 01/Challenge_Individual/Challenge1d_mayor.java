@@ -6,7 +6,7 @@ public class Challenge1d_mayor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese 3 numeros:");
-        int n[] = new int[3];
+        int[] n = new int[3];
         n[0]=scanner.nextInt();
         n[1]=scanner.nextInt();
         n[2]=scanner.nextInt();
