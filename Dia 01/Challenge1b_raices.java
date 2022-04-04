@@ -10,6 +10,12 @@ public class Challenge1b_raices {
         b = scanner.nextInt();
         c = scanner.nextInt();
         int discriminante = (int)Math.pow(b, 2)-4*a*c;
-        if()
+        if(discriminante>0){
+            System.out.println("Tiene raices distintas");
+        } else if(discriminante==0){
+            System.out.println("Tiene raices iguales");
+        } else if(discriminante<0){
+            System.out.println("Tiene raices imaginarias");
+        }
     }
 }
