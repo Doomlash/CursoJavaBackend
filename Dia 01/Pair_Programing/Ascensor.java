@@ -49,6 +49,17 @@ public class Ascensor {
             return true;
         }
     }
+    public int getPiso(){
+        return pisoActual;
+    }
 
-
+    public int getPersonas(){
+        return personas;
+    }
+    public int getPisoMaximo(){
+        return pisoMaximo;
+    }
+    public int capacidadMaxima(){
+        return capacidadMaxima;
+    }
 }
