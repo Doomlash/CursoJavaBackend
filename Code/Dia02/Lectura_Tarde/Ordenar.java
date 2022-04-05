@@ -7,7 +7,7 @@ public class Ordenar{
         boolean ubicado = false;
         for(int i=0;i<a.length;i++){
             while(!ubicado){
-                if(a[i]<a[i-1]){
+                if(a[0].compareTo(a[1])>0){
                     String temp = a[i];
                     a[i]=a[i-1];
                     a[i-1]=temp;
