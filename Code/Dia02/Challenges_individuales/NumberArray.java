@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class NumberArray {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            //int array[] = new int[10];
-            //for (int i = 0; i < 10; i++) {
-              //  array[i] = scanner.nextInt();
-            //}
-            int array[] = {15,2,29,42,67,117,37,99,1000,77};
+            int array[] = new int[10];
+            System.out.println("Ingrese 10 numeros, si ingresa mas, el restante sera ignorado.");
+            for (int i = 0; i < 10; i++) {
+                array[i] = scanner.nextInt();
+            }
             int aOrdenar, aux;
             int ordenados = 0;
             boolean enSuLugar = false;
