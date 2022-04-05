@@ -1,7 +1,9 @@
-package Challenge_Individual;
+package Dia01.Challenge_Individual;
+
+
 import java.util.Scanner;
 
-public class Challenge1e_menor {
+public class Challenge1d_mayor {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,13 +12,13 @@ public class Challenge1e_menor {
         n[0]=scanner.nextInt();
         n[1]=scanner.nextInt();
         n[2]=scanner.nextInt();
-        int menor = Integer.MAX_VALUE;
+        int mayor = Integer.MIN_VALUE;
         for (int i = 0; i < n.length; i++) {
-            if((Integer.compare(menor, n[i]))>0){
-                menor = n[i];
+            if((Integer.compare(mayor, n[i]))<0){
+                mayor = n[i];
             }
         }
-        System.out.println("menor = "+String.valueOf(menor));
+        System.out.println("mayor = "+String.valueOf(mayor));
         
     }
 }

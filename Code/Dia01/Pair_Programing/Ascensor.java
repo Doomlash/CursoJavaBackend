@@ -1,4 +1,4 @@
-package Pair_Programing;
+package Dia01.Pair_Programing;
 
 /*
 *crear una clase que modele un ascensor, con el rango de pisos y de personas que puede tener. 
@@ -42,7 +42,7 @@ public class Ascensor {
         }
     }
     public boolean bajarPisos(int n){
-        if((pisoActual-n)>0){
+        if((pisoActual-n)<0){
             return false;
         } else {
             pisoActual-=n;

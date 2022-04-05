@@ -1,4 +1,6 @@
-package Challenge_Individual;
+package Dia01.Challenge_Individual;
+
+
 import java.util.Scanner;
 
 public class Challenge1f_capicua {

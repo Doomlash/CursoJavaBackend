@@ -1,4 +1,4 @@
-package Pair_Programing;
+package Dia01.Pair_Programing;
 
 import java.util.Scanner;
 /*

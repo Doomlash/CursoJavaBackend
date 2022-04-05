@@ -1,4 +1,4 @@
-package Lectura_Tarde;
+package Dia01.Lectura_Tarde;
 
 import java.util.Scanner;
 
