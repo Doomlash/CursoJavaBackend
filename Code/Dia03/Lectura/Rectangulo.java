@@ -9,7 +9,7 @@ public class Rectangulo extends Figura{
     }
     
     @Override
-    public int getPerimetro() {
+    public double getPerimetro() {
         return ladoA*2+ladoB*2;
     }
 }
