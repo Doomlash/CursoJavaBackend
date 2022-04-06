@@ -10,7 +10,7 @@ public class Triangulo extends Figura {
     }
     
     @Override
-    public int getPerimetro() {
+    public double getPerimetro() {
         return ladoA+ladoB+ladoC;
     }
     

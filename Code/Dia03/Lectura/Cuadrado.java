@@ -8,7 +8,7 @@ public class Cuadrado extends Figura{
     }
     
     @Override
-    public int getPerimetro() {
+    public double getPerimetro() {
         return lado*4;
     }
 }
