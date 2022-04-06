@@ -30,7 +30,7 @@ public class VectorStack<E> implements Pila<E>{
             return vector.lastElement();
         } catch (Exception e) {
             throw new EmptyStackException();
-        };
+        }
     }
 
     @Override

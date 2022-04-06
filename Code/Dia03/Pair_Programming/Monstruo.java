@@ -2,17 +2,11 @@ package Dia03.Pair_Programming;
 
 public abstract class Monstruo {
     protected int health;
-    protected int speed;
-    protected String attackType;
-    protected int attackDamage;
     protected boolean alive;
+    protected String name;
 
-    public int getSpeed(){
-        return speed;
-    }
-
-    public String getAttackType() {
-        return attackType;
+    public String getName(){
+        return name;
     }
 
     public int getHealth() {
@@ -23,11 +17,12 @@ public abstract class Monstruo {
         return alive;
     }
 
-    public void recieveDamage(String damageType, int damage){
+    public int recieveDamage(String damageType, int damage){
         health-=damage;
         if(health<0){
             alive = false;
         }
+        return damage;
     }
 
 
