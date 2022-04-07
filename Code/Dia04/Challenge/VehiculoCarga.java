@@ -15,9 +15,9 @@ public class VehiculoCarga extends Vehiculo {
         remolque = null;
     }
 
-    public void accelerate(int speed) throws DemasiadoRapidoException {
+    public void accelerate(int speed){
         if(remolque!=null&&this.getSpeed()+speed>100){
-            throw new DemasiadoRapidoException("asd");
+            //throw new DemasiadoRapidoException("asd");
         }
         super.accelerate(speed);
     }
