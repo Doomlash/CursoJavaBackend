@@ -10,4 +10,11 @@ public class Profesor extends Empleado{
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+" Profesor [departamento=" + departamento + "]";
+    }
+
+    
 }

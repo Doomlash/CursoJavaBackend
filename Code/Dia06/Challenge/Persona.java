@@ -30,6 +30,11 @@ public class Persona {
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
+    @Override
+    public String toString() {
+        return "Persona [apellido=" + apellido + ", estadoCivil=" + estadoCivil + ", id=" + id + ", nombre=" + nombre
+                + "]";
+    }
 
     
 }

@@ -62,7 +62,7 @@ public class Vendedor extends Empleado{
     }
 
     public void eliminarCliente(Cliente cliente){
-        clientes.remove(cliente)
+        clientes.remove(cliente);
     }
 
 }

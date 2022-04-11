@@ -15,4 +15,10 @@ public class Empleado extends Persona{
     public void setDespacho(String despacho) {
         this.despacho = despacho;
     }
+    @Override
+    public String toString() {
+        return super.toString()+" Empleado [despacho=" + despacho + ", incorporacion=" + incorporacion + "]";
+    }
+
+    
 }

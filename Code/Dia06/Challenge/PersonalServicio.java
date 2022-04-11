@@ -10,4 +10,11 @@ public class PersonalServicio extends Empleado{
     public void setSector(String sector) {
         this.sector = sector;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+" PersonalServicio [sector=" + sector + "]";
+    }
+
+    
 }

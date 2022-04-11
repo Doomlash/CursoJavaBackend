@@ -11,5 +11,10 @@ public class Estudiante extends Persona{
         this.curso = curso;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+" Estudiante [curso=" + curso + "]";
+    }
+
     
 }
