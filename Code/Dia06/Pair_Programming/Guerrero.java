@@ -1,4 +1,4 @@
-package PairProgramming;
+package Dia06.Pair_Programming;
 
 public class Guerrero implements ClassStrategy {
     @Override
