@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Spring Boot Application</title>
+   </head>
+   <body>
+        <h4>Es hora del DU DU DU DU DU DU DUELOOOO</h4>
+        <h3>Tu mazo: </h3>
+        <p>Nombre: <span th:text = "${mazo.name}"></span></p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+            </tr>
+            <tr th:each="carta : ${cartas}">
+                <td class="align-middle" th:text="${carta.id}"></td>
+                <td class="align-middle" th:text="${carta.name}"></td>
+                <td class="align-middle" th:text="${carta.clase}"></td>  
+            </tr>
+        </table>
+        <h3>Mano de muestra: </h3>
+        <p th:each="carta: ${mano}" th:text="${carta.name}"></p>
+   </body>
+</html>

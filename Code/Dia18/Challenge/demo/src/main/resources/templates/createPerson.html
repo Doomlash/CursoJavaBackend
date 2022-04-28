@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create person</title>
+	</head>
+	<body>
+		<form th:action="@{/create}" th:object="${person}" method="post">
+			<label>Name: </label>
+			<input type="text" name="name" th:field="*{Name}" placeholder="asd"/>
+			<br>
+			<label>Email: </label>
+			<input type="text" name="email" th:field="*{email}" placeholder="asd"/>
+			<button type="submit">
+				Create user 
+			</button>
+			<br>
+		</form>
+		<a th:href="@{/}">Go back</a>
+	</body>
+</html>
