@@ -21,5 +21,9 @@ public class PersonService {
         people.put(p.getDni(), p);
     }
 
+    public Object getByDNI(int dni) {
+        return people.get(dni);
+    }
+
 
 }

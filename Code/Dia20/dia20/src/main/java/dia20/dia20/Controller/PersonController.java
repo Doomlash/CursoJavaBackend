@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import dia20.dia20.Model.Person;
 import dia20.dia20.Service.PersonService;
@@ -40,6 +41,25 @@ public class PersonController {
     @PostMapping("/post")
     public String postPerson(Person p){
         ps.add(p);
+        return "redirect:/person/list";
+    }
+
+    @GetMapping("/dni")
+    public String dniForm(Model model){
+        model.addAttribute("layout", "find_people_form");
+        return "main_page";
+    }
+    @GetMapping("/dniGet")
+    public String showByDni(@RequestParam int dni, Model model){
+        model.addAttribute("layout", "show_person");
+        model.addAttribute("getPerson", ps.getByDNI(dni));
+        return "main_page";
+    }
+
+    @RequestMapping("/dniForm")
+    public String dniGet(@RequestParam int dni){
+        System.out.println("asd");
+        System.out.println(dni);
         return "redirect:/person/list";
     }
 }

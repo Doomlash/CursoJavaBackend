@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div th:fragment="find_people_form">
+            <form th:action="@{/person/dniGet}">
+                <input type="number" th:name="dni"/>
+                <input type="submit"/>
+            </form>
+        </div>
+    </body>
+</html>
