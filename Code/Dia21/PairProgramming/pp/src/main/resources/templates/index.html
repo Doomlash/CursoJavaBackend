@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Venta Alfajores</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripcion</th>
+        </tr>
+        <tr th:each="a : ${alfajores}">
+            <td th:text="${a.nombre}"></td>
+            <td><p>$<span th:text="${a.precio}"></span></p></td>
+            <td th:text="${a.descripcion}"></td>
+            <td><a th:href="@{/buy/{id}(id=${a.id})}">comprar</a></td>
+        </tr>
+    </table>
+</body>
+</html>

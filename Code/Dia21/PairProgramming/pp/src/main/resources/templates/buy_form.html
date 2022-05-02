@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form th:action="@{/ticket/{id}(id=${alfajor})}" method="post">
+            name:<input type="text" name="name" id="name"/><br>
+            dni:<input type="nombre" name="dni" id="dni"/><br>
+            nro tarjeta:<input type="number" name="tarjeta" id="tarjeta"/><br>
+            <input type="submit" value="submit"/>
+        </form>
+    </body>
+</html>
