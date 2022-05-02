@@ -42,7 +42,4 @@ public class PersonController {
         ps.add(p);
         return "redirect:/person/list";
     }
-
-    @GetMapping("/dni")
-    public String 
 }
