@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <section class="show_person">
+            <table th:fragment="show_person">
+                <tr>
+                    <th>DNI</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                <tr th:each="p:${people}">
+                    <td th:text="${p.dni}"></td>
+                    <td th:text="${p.name}"></td>
+                    <td th:text="${p.email}"></td>
+                    <td><a th:href="@{/person/delete/{dni}(dni=${p.dni})}">delete</a></td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>

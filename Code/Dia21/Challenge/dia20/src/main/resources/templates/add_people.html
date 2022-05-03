@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div th:fragment="add_people">
+            <form method="post" th:action="@{/person/post}" th:object="${newPerson}">
+                <input id="dni" placeholder="dni" type="number" th:field="*{dni}"/><p th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}">dni can't be empty</p>
+                <input id="name" placeholder="name" required type="text" th:field="*{name}"/>
+                <input id="email" placeholder="email" required type="email" th:field="*{email}"/>
+                <button type="submit">  
+                    Create Person 
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

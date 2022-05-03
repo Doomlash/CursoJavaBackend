@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <section class="list_people">
+            <table th:fragment="list_people">
+                <tr>
+                    <th>DNI</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                <tr th:each="p:${people}">
+                    <td th:text="${p.dni}"></td>
+                    <td th:text="${p.name}"></td>
+                    <td th:text="${p.email}"></td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>
