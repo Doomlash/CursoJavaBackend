@@ -1,6 +1,7 @@
 package com.example.demo.Controllers;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.example.demo.Model.Punto;
 import com.example.demo.Services.PuntoService;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/punto")
+@RequestMapping("/puntos")
 public class PuntoController {
     @Autowired
     private PuntoService ps;
@@ -33,6 +34,22 @@ public class PuntoController {
         return "correcto";
     }
 
+    @GetMapping("/{id}")
+    public Punto getPunto(@PathVariable int id){
+        return ps.getById(id);
+    }
+
+    @PostMapping("/{x}/{y}")
+    public void postPunto(@PathVariable int x,@PathVariable int y){
+        ps.saveNew(new PuntoRequest(x, y));
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletePunto(@PathVariable int id){
+        ps.delete(id);
+    }
+
+
     @GetMapping("/closest")
     public Punto getClosest(){
         return ps.findClosest();
@@ -44,12 +61,17 @@ public class PuntoController {
     }
 
     @GetMapping()
+    public List<Punto> findAll(){
+        return ps.findAllPosta();
+    }
+
+    @GetMapping("/getLogico")
     public Collection<Punto> getAll(){
         return ps.findAll();
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable long id){
+    @DeleteMapping("/logic/{id}")
+    public void deleteById(@PathVariable int id){
         ps.deleteById(id);
     }
 

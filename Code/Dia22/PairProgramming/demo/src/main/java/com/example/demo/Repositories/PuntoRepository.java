@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PuntoRepository extends JpaRepository<Punto,Long>{
+public interface PuntoRepository extends JpaRepository<Punto,Integer>{
 
     @Query(nativeQuery = true, value = "SELECT * FROM punto WHERE SQRT(POW(X,2)+POW(Y,2)) = (SELECT MIN(SQRT(POW(X,2)+POW(Y,2))) FROM punto);")
     Punto findClosest();
