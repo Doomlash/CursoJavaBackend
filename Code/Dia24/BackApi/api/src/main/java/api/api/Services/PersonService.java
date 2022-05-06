@@ -24,9 +24,31 @@ public class PersonService {
     public boolean post(Person p) {
         if(people.get(p.getDni())!=null){
             return false;
+        }else{
+            String email = p.getEmail();
+            if(!email.endsWith(".com")||!email.contains("@")){
+                return false;
+            }
+            String pw = p.getPassword();
+            boolean hasMayus = false, hasMinus = false, hasNumber = false;
+            for (char c : pw.toCharArray()) {
+                if(!hasNumber && c>=48 && c<=57){
+                    hasNumber=true;
+                }
+                if(!hasMayus && c>=65 && c<=90){
+                    hasMayus = true;
+                }
+                if(!hasMinus && c>=97 && c<=122){
+                    hasMinus = true;
+                }
+            }
+            if(!hasMayus || !hasMinus || !hasNumber){
+                return false;
+            }
+            people.put(p.getDni(), p);
+            return true;  
         }
-        people.put(p.getDni(), p);
-        return true;
+        
     }
 
     public boolean put(Person p) {

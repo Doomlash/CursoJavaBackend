@@ -9,4 +9,6 @@ public class Person {
     private Integer dni;
     private String name;
     private String phone;
+    private String email;
+    private String password;
 }
