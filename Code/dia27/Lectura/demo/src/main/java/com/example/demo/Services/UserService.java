@@ -26,16 +26,12 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<MyUser> optional = ur.findByUsername(username);
         if (optional.isEmpty()) {
-            System.out.println("asdasdasd");
             throw new UsernameNotFoundException(username);
         }
         MyUser u = optional.get();
-        System.out.println("zxc");
         Set<GrantedAuthority> set = new HashSet<>();
         set.add(new SimpleGrantedAuthority(ur.getRole(username)));
-        System.out.println("asd");
         User user = new User(u.getUsername(), u.getPassword(), set);
-        System.out.println(user.toString());
         return user;
     }
     
