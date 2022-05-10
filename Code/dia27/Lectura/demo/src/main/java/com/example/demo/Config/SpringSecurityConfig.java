@@ -32,6 +32,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .httpBasic()
             .authenticationEntryPoint(authEntryPoint);
+            
     }
 
     @Override

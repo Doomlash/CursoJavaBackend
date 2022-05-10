@@ -1,10 +1,8 @@
 package com.example.demo.Repositories;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.Model.MyUser;
-import com.example.demo.Model.Role;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,8 +13,8 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<MyUser,String>  {
 
 
-    @Query(value = "SELECT role.id,role.name FROM my_user JOIN role WHERE my_user.username=:username", nativeQuery = true)
-    public List<Role> getRoles(@Param("username") String username);
+    @Query(value = "SELECT name FROM my_user INNER JOIN role ON my_user.role_id=role.id WHERE username=:username", nativeQuery = true)
+    public String getRole(@Param("username") String username);
 
     public Optional<MyUser> findByUsername(String username);
 }

@@ -22,9 +22,9 @@ class DemoApplicationTests {
 	@Test
     void contextLoads() {
         MyUser user = new MyUser();
-        user.setUsername(   "admin123");
-        user.setPassword(pe.encode("123"));
-        user.setRol(new Role(1, "Admin"));
+        user.setUsername(   "asd");
+        user.setPassword(pe.encode("asd"));
+        user.setRol(new Role(2, "Usuario"));
 
         MyUser r = ur.save(user);
         Assert.assertTrue(r.getPassword().equalsIgnoreCase(user.getPassword()));

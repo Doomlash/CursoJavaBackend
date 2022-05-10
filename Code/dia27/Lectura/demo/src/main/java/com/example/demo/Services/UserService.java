@@ -1,11 +1,10 @@
 package com.example.demo.Services;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import com.example.demo.Model.MyUser;
-import com.example.demo.Model.Role;
 import com.example.demo.Repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,13 +30,13 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         MyUser u = optional.get();
-        System.out.println(u.toString());
-        List<GrantedAuthority> c = new LinkedList<>();
-        for(Role role:ur.getRoles(username)){
-            System.out.println(role.getName());
-            c.add(new SimpleGrantedAuthority(role.getName()));
-        }
-        return new User(u.getUsername(), u.getPassword(), c);
+        System.out.println("zxc");
+        Set<GrantedAuthority> set = new HashSet<>();
+        set.add(new SimpleGrantedAuthority(ur.getRole(username)));
+        System.out.println("asd");
+        User user = new User(u.getUsername(), u.getPassword(), set);
+        System.out.println(user.toString());
+        return user;
     }
     
 }
