@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div th:fragment="song_view">
+        <div class="fluid-container pt-3">
+            <table class ="table table-bordered" >
+                <thead class="bg-dark">
+                <tr class="">
+                    <th class="text-center text-light"> Name </th>
+                    <th class="text-center text-light"> Author </th>
+                    <th class="text-center text-light"> Duration </th>
+                    <th class="text-center text-light"> Duration </th>
+                    <th class="text-center text-light"> Actions </th>
+                </tr>
+                </thead>
+                <tbody style="text-align:center; background-color:rgb(77, 77, 77);">
+                <tr th:each="song: ${songs}">
+                    <td class="text-center text-light" th:text = ${song.name} ></td>
+                    <td class="text-center text-light" th:text = ${song.author}></td>
+                    <td class="text-center text-light" th:text = ${song.duration}></td>
+                    <td class="text-center text-light" th:text = ${song.genre}></td>
+                    <td>
+                        <a th:href="@{play/{id} (id = ${song.id})}"><button class="btn btn-primary btn-sm" style="width: fit-content; height: fit-content;"> Play </button></a>
+                    </td>   
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

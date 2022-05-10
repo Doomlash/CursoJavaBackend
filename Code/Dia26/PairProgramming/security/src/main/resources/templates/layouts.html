@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <section th:fragment="navbar">
+        <div th:insert="Components/header::navbar"></div>
+    </section>
+    <section th:fragment="empty"></section>
+    <section th:fragment="free_main">
+        <div th:insert="Components/free_main :: free_main"></div>
+    </section>
+    <section th:fragment="song_view">
+        <div th:insert="Components/song_view :: song_view"></div>
+    </section>
+    <section th:fragment="play">
+        <div th:insert="Components/play :: play"></div>
+    </section>
+</body>
+</html>

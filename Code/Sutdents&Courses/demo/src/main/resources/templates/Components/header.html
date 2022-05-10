@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div th:fragment="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkslategray;">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light" th:href="@{/users}">Users</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" th:href="@{/users}">Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" th:href="@{/users}">Classes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" th:href="@{/users}">Inscripcion</a>
+                </nav>
+
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <div th:fragment="main">
+    <div th:fragment="free_main">
         <div class="container-fluid ">
             <div class="row">
                 <div class="col-1 min-vh-100 bg-dark pt-5" >
@@ -9,14 +9,17 @@
                 <div class="col-2 pt-5">
                     <div class="container-fluid">
                         <div class="row">
-                            <div>
-                                <a th:href="@{/users/show}"><button style="margin:10px 0px; width:100%" class="btn btn-dark" >Create an Student</button></a>
-                            </div>
+                            <div class="text-light" style="font-size:xx-large; text-align: center;">Menu</div>
+                            <form th:action="@{/free/find}">
+                                <h6>Filter by Name:</h6>
+                                <input style="width:100%" type="text" th:name="name" placeholder=""/>
+                                <input style="margin: 10px 0px; width:100%" class="btn btn-outline-dark" type="submit" value="Find"/>
+                            </form> 
                         </div>
                     </div>
                 </div>
                 <div class="col-8">
-                    Container Right
+                    <div th:insert="layouts :: ${view}"></div>
                 </div>
                 <div class="col-1 min-vh-100 bg-dark pt-5">
                 </div>

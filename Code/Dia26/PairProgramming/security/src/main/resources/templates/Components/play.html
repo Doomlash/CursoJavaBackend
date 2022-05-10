@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div th:fragment="play">
+        <div class="fluid-container pt-3" >
+            <div class="alert alert-info">Reproduciendo <span style="font-weight: bold;" th:text="${song.name}"></span>  by <span style="font-weight: bold;" th:text="${song.author}"></span></div>
+            <a th:href="@{/free/songs}"><button class="btn btn-danger"> Stop </button></a>
+        </div>
+    </div>
+</body>
+</html>

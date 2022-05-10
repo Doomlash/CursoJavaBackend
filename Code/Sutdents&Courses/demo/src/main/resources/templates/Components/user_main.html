@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <div th:fragment="main">
+    <div th:fragment="user_main">
         <div class="container-fluid ">
             <div class="row">
                 <div class="col-1 min-vh-100 bg-dark pt-5" >
@@ -10,13 +10,16 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div>
-                                <a th:href="@{/users/show}"><button style="margin:10px 0px; width:100%" class="btn btn-dark" >Create an Student</button></a>
+                                <div class="text-light" style="font-size:xx-large; text-align: center;">Menu</div>
+                                <a th:href="@{/users/show}"><button style="width:100%" class="btn btn-dark" >Show Users</button></a>
+                                <a th:href="@{/users/create}"><button style="margin-top: 5px; width:100%" class="btn btn-dark" >Create User</button></a>
+                                <a th:href="@{/users/show}"><button style="margin-top: 5px; width:100%" class="btn btn-dark" >Find User</button></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-8">
-                    Container Right
+                    <div th:insert="layouts :: ${view}"></div>
                 </div>
                 <div class="col-1 min-vh-100 bg-dark pt-5">
                 </div>

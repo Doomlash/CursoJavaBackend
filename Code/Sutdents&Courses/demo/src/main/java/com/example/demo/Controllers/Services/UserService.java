@@ -1,7 +1,8 @@
-package com.example.demo.Services;
+package com.example.demo.Controllers.Services;
 
+import com.example.demo.Controllers.Repositories.UserRepository;
+import com.example.demo.Controllers.Requests.UserRequest;
 import com.example.demo.Model.User;
-import com.example.demo.Repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,4 +20,19 @@ public class UserService {
         Pageable p = PageRequest.of(pageNum, pageSize);
         return ur.findAll(p);
     }
+
+    public Object getAll() {
+        return ur.findAll();
+
+    }
+
+    public void postUser(UserRequest userRequest) {
+        ur.save(new User(userRequest.getUsername(), userRequest.getPassword(), userRequest.getName(), userRequest.getEmail()));
+        
+    }
+
+    public void deleteUser(long id) {
+        ur.deleteById(id);
+    }
+
 }

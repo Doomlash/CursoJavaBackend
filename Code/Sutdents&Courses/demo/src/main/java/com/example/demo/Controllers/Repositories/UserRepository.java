@@ -1,4 +1,4 @@
-package com.example.demo.Repositories;
+package com.example.demo.Controllers.Repositories;
 
 import com.example.demo.Model.User;
 

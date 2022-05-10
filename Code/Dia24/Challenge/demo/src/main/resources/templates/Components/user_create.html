@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div th:fragment="user_create">
+        <div class="fluid-container pt-3" >
+            <form th:action="@{/users/create}" th:object="${userRequest}" method="post">
+                <div class="form-group">
+                    <label class="text-light" for="email">Email address</label>
+                    <input type="text" class="form-control" placeholder="Enter email" th:field="*{email}">
+                    <small class="form-text" style="color: rgb(255, 150, 170);" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>                
+                </div>  
+                <div class="form-group" >
+                    <label class="text-light" for="name">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter full name" th:field="*{name}">
+                    <small class="form-text" style="color: rgb(255, 150, 170);" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>                
+                </div>
+                <div class="form-group">
+                    <label class="text-light" for="username">Username</label>
+                    <input type="text" class="form-control" placeholder="Enter username" th:field="*{username}">
+                    <small class="form-text" style="color: rgb(255, 150, 170);" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small>                
+                </div>
+                <div class="form-group">
+                    <label class="text-light" for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" th:field="*{password}">
+                    <small class="form-text" style="color: rgb(255, 150, 170);" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>                
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
