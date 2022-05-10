@@ -15,7 +15,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService implements UserDetailsService {
 
     @Autowired
@@ -23,13 +25,13 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("asdasdasdsadsadsadsa");
-        Optional<MyUser> optional = ur.findById(username);
+        Optional<MyUser> optional = ur.findByUsername(username);
         if (optional.isEmpty()) {
-            System.out.println("asd");
+            System.out.println("asdasdasd");
             throw new UsernameNotFoundException(username);
         }
         MyUser u = optional.get();
+        System.out.println(u.toString());
         List<GrantedAuthority> c = new LinkedList<>();
         for(Role role:ur.getRoles(username)){
             System.out.println(role.getName());

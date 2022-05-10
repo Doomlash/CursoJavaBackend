@@ -21,4 +21,11 @@ public class MyUser {
     @ManyToOne()
     @JoinColumn(name = "role_id")
     private Role rol;
+
+    @Override
+    public String toString() {
+        return "MyUser [password=" + password + ", rol=" + rol + ", username=" + username + "]";
+    }
+
+    
 }
