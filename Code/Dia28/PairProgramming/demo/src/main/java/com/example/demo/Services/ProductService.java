@@ -1,5 +1,6 @@
 package com.example.demo.Services;
 
+import java.sql.Date;
 import java.util.List;
 
 import com.example.demo.Model.Product;
@@ -21,5 +22,7 @@ public class ProductService {
     public Product save(Product item) {
         return null;
     }
-    
+    public List<Product> getByDate(Date start, Date end){
+        return pr.getByDate(start.toString(), end.toString());
+    }
 }

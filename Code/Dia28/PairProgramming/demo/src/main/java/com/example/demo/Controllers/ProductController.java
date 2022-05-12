@@ -1,5 +1,7 @@
 package com.example.demo.Controllers;
 
+import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import com.example.demo.Model.Product;
@@ -21,7 +23,7 @@ public class ProductController {
     ProductService ps;
 
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<Product>> getAll() {
         try {
 
@@ -40,5 +42,35 @@ public class ProductController {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
         }
     }
+
+    @GetMapping("/p2w")
+    public ResponseEntity<Object> getByDate(@RequestBody HashMap<String,String> dates){
+        String startString, endString;
+        startString = dates.get("start");
+        endString = dates.get("end");
+        if(startString == null && endString == null){
+            return new ResponseEntity<>("La Request debe contener un campo 'start' y un campo 'end'", HttpStatus.BAD_REQUEST);
+        }
+        try {
+            Date start = Date.valueOf(startString); 
+            Date end = Date.valueOf(endString);
+            return new ResponseEntity<>(ps.getByDate(start, end),HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>("Las fechas deben tener el formato 'yyyy-mm-dd'", HttpStatus.BAD_REQUEST);
+        }
+        
+    }
+
+    @GetMapping("/plebe")
+    public ResponseEntity<Product> getOneLikeAPeasant() {
+        try {
+            List<Product> l = ps.findAll();
+            Product p = l.get((int)Math.floor(Math.random() * (l.size())));
+            return new ResponseEntity<>(p, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     
 }

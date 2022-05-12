@@ -1,5 +1,7 @@
 package com.example.demo.Model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,4 +21,5 @@ public class Product {
     private long id;
     private String name;
     private double price;
+    private Date date;
 }

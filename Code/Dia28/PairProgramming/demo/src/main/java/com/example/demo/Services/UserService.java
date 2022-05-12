@@ -29,6 +29,7 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         MyUser u = optional.get();
+
         Set<GrantedAuthority> set = new HashSet<>();
         set.add(new SimpleGrantedAuthority(ur.getRole(username)));
         User user = new User(u.getUsername(), u.getPassword(), set);
